@@ -1,51 +1,16 @@
-import { defineStore } from 'pinia';
-import { Node, Edge } from '@vue-flow/core';
+import { defineStore } from "pinia";
+import { Node, Edge } from "@vue-flow/core";
 
-export const useFlowStore = defineStore('flow', {
+export const useFlowStore = defineStore("flow", {
   state: () => ({
     nodes: [
       {
-        id: '1',
-        label: 'start',
+        id: "1",
+        label: "start",
         position: { x: 100, y: 100 },
-        type: 'default',
+        type: "default",
         connectable: true,
       },
-      {
-        id: '2',
-        label: 'default',
-        position: { x: 200, y: 200 },
-        type: 'default',
-        connectable: true,
-      },
-      {
-        id: '3',
-        label: 'default',
-        position: { x: 300, y: 300 },
-        type: 'default',
-        connectable: true,
-      },
-      {
-        id: '4',
-        label: 'default',
-        position: { x: 400, y: 400 },
-        type: 'default',
-        connectable: true,
-      },
-      {
-        id: '5',
-        label: 'default',
-        position: { x: 500, y: 500 },
-        type: 'default',
-        connectable: true,
-      },
-      {
-        id: '6',
-        label: 'default',
-        position: { x: 600, y: 600 },
-        type: 'default',
-        connectable: true,
-      }
     ] as Node[],
     edges: [
       // {

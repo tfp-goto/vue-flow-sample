@@ -73,8 +73,8 @@ const onDrop = (event: DragEvent) => {
 <template>
   <div style="width: 100vw; height: calc(100vh - 200px)">
     <VueFlow
-      :nodes="flowStore.nodes"
-      :edges="flowStore.edges"
+      v-model:nodes="flowStore.nodes"
+      v-model:edges="flowStore.edges"
       fit-view-on-init
       @dragover="onDragOver"
       @drop="onDrop"

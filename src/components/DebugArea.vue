@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useFlowStore } from '../stores/flow';
+import { useFlowStore } from "../stores/flow";
 
 const flowStore = useFlowStore();
 </script>
@@ -9,11 +9,13 @@ const flowStore = useFlowStore();
     <div class="debug-content">
       <div class="debug-section">
         <h3>Nodes State:</h3>
-        <pre>{{ JSON.stringify(flowStore.nodes, null, 2) }}</pre>
+        <!-- <pre>{{ JSON.stringify(flowStore.nodes, null, 2) }}</pre> -->
+        {{ flowStore.nodes }}
       </div>
       <div class="debug-section">
         <h3>Edges State:</h3>
-        <pre>{{ JSON.stringify(flowStore.edges, null, 2) }}</pre>
+        <!-- <pre>{{ JSON.stringify(flowStore.edges, null, 2) }}</pre> -->
+        {{ flowStore.edges }}
       </div>
     </div>
   </div>

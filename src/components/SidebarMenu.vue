@@ -3,18 +3,10 @@ import { useFlowStore } from "../stores/flow";
 
 const flowStore = useFlowStore();
 
-const onDragStartDefault = (event: DragEvent) => {
+const onDragStart = (event: DragEvent, type: string) => {
   if (event.dataTransfer) {
     console.log("onDragStart");
-    event.dataTransfer.setData("application/reactflow", "default");
-    event.dataTransfer.effectAllowed = "move";
-  }
-};
-
-const onDragStartAi = (event: DragEvent) => {
-  if (event.dataTransfer) {
-    console.log("onDragStart");
-    event.dataTransfer.setData("application/reactflow", "ai");
+    event.dataTransfer.setData("application/reactflow", type);
     event.dataTransfer.effectAllowed = "move";
   }
 };
@@ -30,7 +22,7 @@ const clickTest = () => {
       <div
         class="dnd-item"
         draggable="true"
-        @dragstart="onDragStartDefault"
+        @dragstart="onDragStart($event, 'default')"
         @click="clickTest"
       >
         要素を追加
@@ -38,7 +30,7 @@ const clickTest = () => {
       <div
         class="dnd-item"
         draggable="true"
-        @dragstart="onDragStartAi"
+        @dragstart="onDragStart($event, 'ai')"
         @click="clickTest"
       >
         CUSTOM
